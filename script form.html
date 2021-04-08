@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>
+</TITLE>
+<STYLE>
+</STYLE>
+</HEAD>
+<body>
+<script>
+function validates()
+{
+    if(document.F1.email.value=="")
+    {
+    document.getElementById("p1").innerHTML="PLEASE ENTER EMAIL ADDRESS"
+    document.F1.email.focus()
+    return false
+    }
+    else{
+        document.getElementById("p1").innerHTML=""
+    }
+    num=document.F1.mob.value
+    if(num="")
+    {
+        document.getElementById("p1").innerHTML="PLEASE ENTER MOBILE NUMBER"
+        document.F1.mob.focus()
+        return false
+    }
+    else if(num!=10 || isNaN(num))
+{
+    document.getElementById("p1").innerHTML="PLEASE ENTER PROPER MOBILE NUMBER"
+    document.F1.mob.focus()
+    return false
+}
+else{
+    document.getElementById("p1").innerHTML=""
+}
+
+}
+</script>
+<h1>REGISTRATION FORM</h1>
+<form method="post" name="F1" onsubmit="return(validates())">
+<label for="email">e-mail</label>
+<input type="email" name="email"><br/>
+<label for="mob">MOBILE NO</label>
+<input type="number" name="mob"><br/>
+<input type="submit" value="submit"><br/>
+</form>
+<p id="p1">DISPLAY THE MISTAKE</p>
+</body>
+</HTML>
